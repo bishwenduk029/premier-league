@@ -1,0 +1,34 @@
+{
+	"name": "server",
+	"version": "1.0.0",
+	"description": "Learning about Node FullStack with Mongo, Express, React and Node.js (MERN)",
+	"main": "index.js",
+	"engines": {
+		"node": "8.7.0",
+		"npm": "5.5.1"
+	},
+	"scripts": {
+		"start": "node index.js",
+		"server": "nodemon index.js",
+		"client": "npm run start --prefix client",
+		"dev": "concurrently \"npm run server\" \"npm run client \""
+	},
+	"author": "Bishwendu",
+	"license": "ISC",
+	"dependencies": {
+		"concurrently": "^3.5.0",
+		"cookie-session": "^2.0.0-beta.3",
+		"express": "^4.16.2",
+		"mongoose": "^4.12.5",
+		"passport": "^0.4.0",
+		"passport-google-oauth20": "^1.0.0",
+		"prettier-eslint": "^8.2.1"
+	},
+	"devDependencies": {
+		"eslint-config-airbnb": "^16.1.0",
+		"eslint-plugin-import": "^2.8.0",
+		"eslint-plugin-jsx-a11y": "^6.0.2",
+		"eslint-plugin-react": "^7.4.0",
+		"nodemon": "^1.12.1"
+	}
+}
