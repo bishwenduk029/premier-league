@@ -18,11 +18,13 @@ const MatchCard = props => (
             <span className="bold navy-600">{props.match.player_of_match}</span>
             <span className="ml1 normal">was man of the match</span>
           </div>
+          <div className="mr2">
+            <span className="ml1 normal">{ props.match.season }</span>
+          </div>
         </div>
       </div>
       <div className="card-action">
-        <a href="/auth/google">This is a link</a>
-        <a href="/auth/google">This is a link</a>
+        <a href="/auth/google">View Full Match</a>
       </div>
     </div>
   </div>

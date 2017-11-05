@@ -11,21 +11,28 @@ function requestMatches() {
 }
 
 export function receiveMatches(response) {
-  console.log(response);
+  if (!response.error) {
+    return {
+      type: RECIEVE_MATCHES,
+      matches: response.matches,
+      lastMatchID: response.lastMatchDisplayed,
+    };
+  }
   return {
     type: RECIEVE_MATCHES,
-    matches: response.matches,
+    matches: [],
     lastMatchID: response.lastMatchDisplayed,
   };
 }
 
-export function loadMatches() {
+export function loadMatches(matchID) {
+  const lastMatchID = matchID || 0;
   return function (dispatch) {
     dispatch(requestMatches());
 
-    return axios.get('/matches')
+    return axios.get(`/matches/${lastMatchID}`)
       .then(
-        response => response.json(),
+        response => response.data,
 
         error => console.log('An error occured.', error),
       )

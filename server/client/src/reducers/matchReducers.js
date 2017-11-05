@@ -18,8 +18,9 @@ export default function (state = initialState, action) {
 
     case RECIEVE_MATCHES:
       return Object.assign({}, state, {
-        matches: action.matches,
-        lastMatch: action.lastMatch,
+        matches: [...state.matches, ...action.matches],
+        lastMatch: action.lastMatchID,
+        matchesLoading: false,
       });
 
     default:
